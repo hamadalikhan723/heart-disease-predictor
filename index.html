@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Heart Disease Predictor</title></head>
+<body>
+    <h2>Enter Patient Details</h2>
+    <form action="/predict" method="post">
+        {% for feature in ['Age','Sex','CP','Trestbps','Chol','FBS','RestECG','Thalach','Exang','Oldpeak','Slope','CA','Thal'] %}
+            <label>{{ feature }}:</label><br>
+            <input type="number" step="any" name="{{ feature.lower() }}" required><br><br>
+        {% endfor %}
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
